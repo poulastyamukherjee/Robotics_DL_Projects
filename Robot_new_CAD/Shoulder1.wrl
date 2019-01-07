@@ -8,7 +8,7 @@ Group {
         Group {
           children 
             Transform {
-              translation 4.6152788e-009 295 4.8305488e-009
+              translation 4.6152788e-009 0 4.8305488e-009
               rotation 1 0 0  3.1415927
               scale 1 1 1
               scaleOrientation 0 0 1  0
