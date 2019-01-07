@@ -1,0 +1,51 @@
+#VRML V2.0 utf8
+DEF robot Transform {
+	children [
+		DEF link0 Transform {
+			children [
+				Inline { url "Base.wrl" }
+				# Inline { url "frame.wrl" }
+			]
+		}
+		DEF link1 Transform {
+			rotation 0 0 0 1
+			translation 0 0 0
+			children [
+				Inline { url "Shoulder1.wrl" }
+				# Inline { url "frame.wrl" }
+			]
+		}
+		DEF link2 Transform {
+			rotation 0 0 0  1
+			translation 0 0 85
+			children [
+				Inline { url "NO1ARM1.wrl" }
+				# Inline { url "frame.wrl" }
+			]
+		}
+		DEF link3 Transform {
+			rotation 0 0 0  1
+			translation 0 0 0
+			children [
+				Inline { url "ELBOW1.wrl" }
+				# Inline { url "frame.wrl" }
+			]
+		}
+		DEF link4 Transform {
+			rotation 0 0 0  1
+			translation 0 0 0
+			children [
+				Inline { url "NO2ARM1.wrl" }
+				# Inline { url "frame.wrl" }
+			]
+		}
+		DEF link5 Transform {
+			rotation 0 0 0  1
+			translation 0 0 0
+			children [
+				Inline { url "Wrist1.wrl" }
+				# Inline { url "frame.wrl" }
+			]
+		}
+	]
+}
