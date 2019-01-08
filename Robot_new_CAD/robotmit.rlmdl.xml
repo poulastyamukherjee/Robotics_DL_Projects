@@ -32,7 +32,7 @@
 			<cm>
 				<x>11.8105</x>
 				<y>0.069009</y>
-				<z>0.049382</z>
+				<z>110.049382</z>
 			</cm>
 		</body>
 		<frame id="frame2"/>
@@ -123,7 +123,7 @@
 			</rotation>
 			<translation>
 				<x>0</x>
-				<y>0</y>
+				<y>295</y>
 				<z>0</z>
 			</translation>
 		</fixed>
@@ -153,7 +153,7 @@
 			</rotation>
 			<translation>
 				<x>0</x>
-				<y>0</y>
+				<y>230</y>
 				<z>0</z>
 			</translation>
 		</fixed>
@@ -162,6 +162,11 @@
 				<a idref="body2"/>
 				<b idref="frame3"/>
 			</frame>
+			<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+			</axis>
 			<max>166</max>
 			<min>-129</min>
 			<speed>267</speed>
@@ -172,13 +177,13 @@
 				<b idref="body3"/>
 			</frame>
 			<rotation>
-				<x>-90</x>
+				<x>0</x>
 				<y>0</y>
-				<z>-90</z>
+				<z>0</z>
 			</rotation>
 			<translation>
 				<x>0</x>
-				<y>-0.05</y>
+				<y>0</y>
 				<z>0</z>
 			</translation>
 		</fixed>
