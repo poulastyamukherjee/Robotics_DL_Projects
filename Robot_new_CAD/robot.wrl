@@ -16,7 +16,7 @@ DEF robot Transform {
 			]
 		}
 		DEF link2 Transform {
-			rotation 0 0 0  1
+			rotation 1 0 0 -1.57096
 			translation 0 0 85
 			children [
 				Inline { url "NO1ARM1.wrl" }

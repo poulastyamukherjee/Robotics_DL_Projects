@@ -211,7 +211,7 @@
 			<axis>
 			<x>0</x>
 			<y>0</y>
-			<z>1</z>
+			<z>-1</z>
 			</axis>
 			<max>160</max>
 			<min>-160</min>
@@ -230,7 +230,7 @@
 			<translation>
 				<x>0</x>
 				<y>0</y>
-				<z>0</z>
+				<z>-270</z>
 			</translation>
 		</fixed>
 		<revolute id="joint4">
@@ -239,9 +239,9 @@
 				<b idref="frame6"/>
 			</frame>
 			<axis>
-			<x>0</x>
+			<x>1</x>
 			<y>0</y>
-			<z>-1</z>
+			<z>0</z>
 			</axis>
 			<max>120</max>
 			<min>-120</min>
@@ -253,13 +253,13 @@
 				<b idref="body5"/>
 			</frame>
 			<rotation>
-				<x>-90</x>
+				<x>0</x>
 				<y>0</y>
 				<z>0</z>
 			</rotation>
 			<translation>
 				<x>0</x>
-				<y>0</y>
+				<y>-58</y>
 				<z>0</z>
 			</translation>
 		</fixed>
@@ -284,6 +284,11 @@
 				<a idref="frame7"/>
 				<b idref="body6"/>
 			</frame>
+			<axis>
+			<x>0.58</x>
+			<y>0.58</y>
+			<z>-0.58</z>
+			</axis>
 			<max>360</max>
 			<min>-360</min>
 			<speed>660</speed>
