@@ -1,0 +1,17 @@
+#VRML V2.0 utf8
+Transform {
+	children [
+		DEF mitsubishi_rv_2f Transform {
+			children [
+				Inline {
+					url "mitsubishi_rv_2f/robot.wrl"
+				}			]
+		}
+		DEF environment Transform {
+			children [
+				Inline {
+					url "environment.wrl"
+				}
+			]
+		}	]
+}
