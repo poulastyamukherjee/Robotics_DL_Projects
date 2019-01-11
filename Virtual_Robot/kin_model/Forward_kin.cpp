@@ -487,3 +487,30 @@ void Controller::processRestartFinished(Controller::ConcurrentTask::Status _stat
 		emit restartFinished(false);
 	}
 }
+
+void Controller::processSelectMachineDialogClosed(QString _queue_name, QString _answer, QString _machine_name) {
+	std::map<QString, QWaitCondition*>::iterator wc_it = this->concurrent_task_wait_condition.find(_queue_name);
+	if (wc_it == this->concurrent_task_wait_condition.end() || wc_it->second == NULL) {
+		return;
+	}
+
+	std::map<QString, QReadWriteLock*>::iterator wc_data_lock_it = this->concurrent_task_wait_condition_data_lock.find(_queue_name);
+	if (wc_data_lock_it == this->concurrent_task_wait_condition_data_lock.end() || wc_data_lock_it->second == NULL) {
+		return;
+	}
+
+	std::map<QString, ConcurrentTaskDataContainer>::iterator wc_data_it = this->concurrent_task_wait_condition_data.find(_queue_name);
+	if (wc_data_it == this->concurrent_task_wait_condition_data.end()) {
+		return;
+	}
+
+	wc_data_lock_it->second->lockForWrite();
+	wc_data_it->second.reset();
+	wc_data_it->second.setValue("ANSWER", _answer);
+	wc_data_it->second.setValue("MACHINE_NAME", _machine_name);
+	wc_data_lock_it->second->unlock();
+
+	wc_it->second->wakeOne();
+}
+
+}
