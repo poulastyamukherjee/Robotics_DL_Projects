@@ -454,3 +454,11 @@ int Controller::disableAutomaticReadConcurrent(QString _queue_name, size_t _line
 
 	return 0;
 }
+
+void Controller::processDisableAutomaticReadFinished(Controller::ConcurrentTask::Status _status) {
+	if (_status.isSuccessful() == true) {
+		emit disableAutomaticReadFinished(true);
+	} else {
+		emit disableAutomaticReadFinished(false);
+	}
+}
