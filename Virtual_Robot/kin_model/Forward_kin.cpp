@@ -444,3 +444,13 @@ void Controller::disableAutomaticRead(size_t _line_id, size_t _robot_id) {
 	this->enqueueConcurrentTask(queue_name, boost::bind(&Controller::disableAutomaticReadConcurrent, this, queue_name, _line_id, _robot_id), "processDisableAutomaticReadFinished");
 }
 
+int Controller::disableAutomaticReadConcurrent(QString _queue_name, size_t _line_id, size_t _robot_id) {
+	// invoke: this->machine_manager->disableAutomaticRead(_line_id, _robot_id);
+	bool status = false;
+	QMetaObject::invokeMethod(this->machine_manager, "disableAutomaticRead", Qt::BlockingQueuedConnection, Q_RETURN_ARG(bool, status), Q_ARG(size_t, _line_id), Q_ARG(size_t, _robot_id));
+	if (status == false) {
+		return 1;
+	}
+
+	return 0;
+}
