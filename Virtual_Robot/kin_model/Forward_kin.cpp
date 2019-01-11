@@ -462,3 +462,9 @@ void Controller::processDisableAutomaticReadFinished(Controller::ConcurrentTask:
 		emit disableAutomaticReadFinished(false);
 	}
 }
+
+void Controller::restart(size_t _line_id, size_t _robot_id) {
+	QString queue_name = "A";
+
+	this->enqueueConcurrentTask(queue_name, boost::bind(&Controller::restartConcurrent, this, queue_name, _line_id, _robot_id), "processRestartFinished");
+}
