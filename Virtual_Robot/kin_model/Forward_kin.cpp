@@ -468,3 +468,14 @@ void Controller::restart(size_t _line_id, size_t _robot_id) {
 
 	this->enqueueConcurrentTask(queue_name, boost::bind(&Controller::restartConcurrent, this, queue_name, _line_id, _robot_id), "processRestartFinished");
 }
+
+int Controller::restartConcurrent(QString _queue_name, size_t _line_id, size_t _robot_id) {
+	// invoke: this->machine_manager->restart(_line_id, _robot_id)
+	bool status = false;
+	QMetaObject::invokeMethod(this->machine_manager, "restart", Qt::BlockingQueuedConnection, Q_RETURN_ARG(bool, status), Q_ARG(size_t, _line_id), Q_ARG(size_t, _robot_id));
+	if (status == false) {
+		return 1;
+	}
+	
+	return 0;
+}
