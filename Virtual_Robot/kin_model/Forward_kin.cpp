@@ -479,3 +479,11 @@ int Controller::restartConcurrent(QString _queue_name, size_t _line_id, size_t _
 	
 	return 0;
 }
+
+void Controller::processRestartFinished(Controller::ConcurrentTask::Status _status) {
+	if (_status.isSuccessful() == true) {
+		emit restartFinished(true);
+	} else {
+		emit restartFinished(false);
+	}
+}
